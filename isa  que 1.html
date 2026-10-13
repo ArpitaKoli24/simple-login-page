@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Login Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Arial, sans-serif;
+      background: #eef2ff;
+    }
+
+    .login-card {
+      width: min(90%, 360px);
+      padding: 30px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px #00000015;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1e293b;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 14px;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    input {
+      border: 1px solid #cbd5e1;
+    }
+
+    button {
+      border: 0;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    #message {
+      text-align: center;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <main class="login-card">
+    <h2>Welcome Back</h2>
+
+    <form id="loginForm">
+      <input
+        id="email"
+        type="email"
+        placeholder="Email address"
+        autocomplete="username"
+        required
+      >
+
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        required
+      >
+
+      <button type="submit">Login</button>
+      <p id="message" role="status"></p>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById("loginForm").addEventListener(
+      "submit",
+      function (event) {
+        event.preventDefault();
+
+        document.getElementById("message").textContent =
+          "Form validated! Connect a secure backend to log in.";
+      }
+    );
+  </script>
+</body>
+</html>
